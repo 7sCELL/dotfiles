@@ -1,0 +1,38 @@
+#admin stuff
+alias s="nohup"
+alias op="sudo"
+alias vz="nvim ~/.zshrc"
+alias v3="nvim ~/.config/i3/config"
+alias vp="nvim ~/.config/polybar/config.ini"
+alias cc="cd"
+alias mv="mv -i"
+alias cp="cp -i"
+alias lf="ls -f"
+alias clean="sudo apt autoremove&& sudo apt autoclean"
+#clear alias
+alias cls="clear"
+alias cl="clear"
+alias c="clear"
+alias ccc="cd && clear"
+#trash
+alias rr="trash"
+alias rl="trash-list"
+alias re="trash-empty"
+#random
+alias f="fastfetch"
+alias mx="sudo chmod +x"
+alias k="kill"
+alias pwo="poweroff"
+alias t="bpytop"
+alias ren="mv -n"
+alias v="nvim"
+alias r="ranger"
+alias :q="exit"
+#govee lights
+alias on="./mac/govee/govon.sh"
+alias off="./mac/govee/govoff.sh"
+alias white="./mac/govee/white.sh"
+alias orange="./mac/govee/orange.sh"
+alias blue="./mac/govee/blue.sh"
+alias go="./mac/govee/gove.sh"
+
