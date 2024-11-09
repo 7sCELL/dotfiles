@@ -1,0 +1,159 @@
+# set modifier
+set $super Mod4
+set $alt Mod1
+
+# set font
+font pango: CascadiaMono 7
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+#random stuff i need
+bindsym $super+l exec i3lock -i ~/Pictures/g/w5.png
+
+#autostart
+exec_always --no-startup-id playerctl
+exec --no-startup-id discord
+exec --no-startup-id terminator
+exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/g/w3.png
+#exec --no-startup-id hsetroot -center ~/p/w/b-010.jpg
+exec_always xrandr --output eDP-1 --mode 1280x800
+exec --no-startup-id xsettingsd &
+exec --no-startup-id compton
+exec --no-startup-id picom -CGb
+exec --no-startup-id .config/polybar/launch.sh
+
+# start a apps super
+bindsym $super+p exec --no-startup-id .config/polybar/launch.sh
+bindsym $super+b exec thorium-browser
+bindsym $super+Return exec terminator
+bindsym $super+x exec terminator
+bindsym $super+e exec thunar
+bindsym $super+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $super+c exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+
+# start a apps alt
+bindsym $alt+p exec --no-startup-id .config/polybar/launch.sh
+bindsym $alt+b exec thorium-browser
+bindsym $alt+Return exec terminator
+bindsym $alt+x exec terminator
+bindsym $alt+e exec thunar
+bindsym $alt+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
+bindsym $alt+c exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
+
+#Pulse Audio controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Path to backlight script
+set $backlight_path ~/git/i3-kb-backlight
+
+# Amount to increase/decrease brightness
+set $brightness_step 500
+
+bindsym XF86KbdBrightnessUp   exec $backlight_path/brightness -n increase $brightness_step
+bindsym XF86KbdBrightnessDown exec $backlight_path/brightness -n decrease $brightness_step
+
+# Toggle tiling / floating
+bindsym $super+Shift+f floating toggle
+
+# common apps keybinds
+bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+
+
+# kill focused window
+bindsym $super+q kill
+bindsym $alt+q kill
+
+# change focus
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
+
+# move focused window
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
+
+# set orientation
+bindsym $super+v split v
+bindsym $super+h split h
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+#displays
+set $left_screen HDMI-2
+workspace $ws1 output $left_screen
+
+# switch to workspace super
+bindsym $super+1 workspace $ws1
+bindsym $super+2 workspace $ws2
+bindsym $super+3 workspace $ws3
+bindsym $super+4 workspace $ws4
+
+# switch to workspace alt
+bindsym $alt+1 workspace $ws1
+bindsym $alt+2 workspace $ws2
+bindsym $alt+3 workspace $ws3
+bindsym $alt+4 workspace $ws4
+
+#names of workspaces
+set $ws1 "1:"
+set $ws2 "2:D"
+set $ws3 "3:B"
+set $ws4 "4:TV"
+
+# move focused container to workspace super
+bindsym $super+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4; workspace $ws4
+
+# move focused container to workspace alt
+bindsym $alt+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $alt+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $alt+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $alt+Shift+4 move container to workspace $ws4; workspace $ws4
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
+bindsym $alt+Shift+r restart
+
+# exit i3
+bindsym $super+Shift+l exec "i3-nagbar -t warning -m 'sus, 6a11$' -b 'yeet' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Return mode "default"
+}
+bindsym $super+r mode "resize"
+
+# window rules, you can find the window class using xprop
+for_window [class=".*"] border pixel 1
+assign [class=URxvt|terminator] $ws1
+assign [class=gparted] $ws3
+assign [class=Lxappearance|System-config-printer.py|LxtaskExo-helper*|Lxrandr|Arandr|Discord] $ws2
+for_window [class=Viewnior|feh|Audacious|Lxappearance|Lxtask|Pavucontrol|blueman] floating enable
+
+# colour of border, background, text, indicator, and child_border
+client.focused              #bf616a #2f343f #FF5733 #10000 #10000
+client.focused_inactive     #2f343f #2f343f #FF5733 #10000 #10000
+client.unfocused            #2f343f #2f343f #FF5733 #10000 #10000
+client.urgent               #2f343f #2f343f #FF5733 #10000 #10000
+client.placeholder          #2f343f #2f343f #FF5733 #10000 #10000
+client.background           #2f343f
+# helo world
