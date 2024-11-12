@@ -13,7 +13,6 @@ bindsym $super+l exec i3lock -i ~/Pictures/g/w5.png
 
 #autostart
 exec_always --no-startup-id playerctl
-exec --no-startup-id discord
 exec --no-startup-id terminator
 exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/g/w3.png
 #exec --no-startup-id hsetroot -center ~/p/w/b-010.jpg
