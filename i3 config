@@ -9,12 +9,12 @@ font pango: CascadiaMono 7
 floating_modifier $super
 
 #random stuff i need
-bindsym $super+l exec i3lock -i ~/Pictures/g/w5.png
+bindsym $super+l exec i3lock -i ~/P
 
 #autostart
 exec_always --no-startup-id playerctl
 exec --no-startup-id terminator
-exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/g/w3.png
+exec_always --no-startup-id feh --randomize --bg-scale ~/P
 #exec --no-startup-id hsetroot -center ~/p/w/b-010.jpg
 exec_always xrandr --output eDP-1 --mode 1280x800
 exec --no-startup-id xsettingsd &
