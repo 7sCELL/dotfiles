@@ -108,10 +108,10 @@ bindsym $alt+3 workspace $ws3
 bindsym $alt+4 workspace $ws4
 
 #names of workspaces
-set $ws1 "1:"
-set $ws2 "2:D"
-set $ws3 "3:B"
-set $ws4 "4:TV"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 
 # move focused container to workspace super
 bindsym $super+Shift+1 move container to workspace $ws1; workspace $ws1
