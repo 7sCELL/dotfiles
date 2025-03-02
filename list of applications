@@ -34,3 +34,6 @@ Section "InputClass"
         Option "Tapping" "on"
         Option "NaturalScrolling" "True"
 EndSection
+
+
+#for plotbar set the launch file to +777
