@@ -1,4 +1,4 @@
-#pak need to install 
+#applications need to install 
 sudo pacman -S git curl kitty playerctl neovim polybar steam bluez bluez-utils blueman pulseaudio pulseaudio-bluetooth pavucontrol picom brightnessctl rofi gvfs-smb feh thunar grub-customizer bpytop ranger 
 sudo yay -S kew
 
