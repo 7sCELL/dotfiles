@@ -1,0 +1,42 @@
+[global_config]
+  dbus = False
+  window_state = maximise
+  borderless = True
+  extra_styling = False
+  tab_position = hidden
+  homogeneous_tabbar = False
+  ask_before_closing = never
+  detachable_tabs = False
+[keybindings]
+  copy = <Primary>c
+  paste = <Primary>v
+[profiles]
+  [[default]]
+    allow_bold = False
+    icon_bell = False
+    background_darkness = 0.49
+    background_type = transparent
+    background_image = /home/jay/Pic/Wallpapers/nord-prime-number-spiral.png
+    cursor_blink = False
+    cursor_fg_color = "#000000"
+    cursor_bg_color = "#aaaaaa"
+    cursor_color_default = False
+    font = CaskaydiaMono Nerd Font 8
+    foreground_color = "#00ff00"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_lines = 10000
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    use_system_font = False
+    title_use_system_font = False
+    title_font = CaskaydiaMono Nerd Font 9
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
