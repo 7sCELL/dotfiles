@@ -1,3 +1,3 @@
-redoing my dot files with update config for new laptop 
+redoing my dot files with updated config for new laptop 
 
 i3 polybar kitty rofi
