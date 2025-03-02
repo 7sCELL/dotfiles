@@ -14,7 +14,7 @@ sudo nvim /etc/environment
 
 GTK_THEME=Adwaita-dark
 
-#set aim to false
+#set animations to false
 /etc/xdg/picom.conf
 
 #NvChad neovim]
