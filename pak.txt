@@ -1,0 +1,39 @@
+#pak need to install 
+sudo pacman -S git curl kitty playerctl neovim polybar steam bluez bluez-utils blueman pulseaudio pulseaudio-bluetooth pavucontrol picom brightnessctl rofi gvfs-smb feh thunar grub-customizer bpytop ranger 
+sudo yay -S kew
+
+sudo systemctl start bluetooth.service
+
+sudo systemctl enable bluetooth.service
+
+#fonts
+/usr/share/fonts
+
+#theme
+sudo nvim /etc/environment
+
+GTK_THEME=Adwaita-dark
+
+#set aim to false
+/etc/xdg/picom.conf
+
+#NvChad neovim]
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+
+#tap and NaturalScrolling for touchpad
+sudo nvim /etc/X11/xorg.conf.d/touchpad-tap.conf
+
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "Tapping" "on"
+        Option "NaturalScrolling" "True"
+EndSection
+
+#linutil
+curl -fsSL https://christitus.com/linux | sh
+
+
+
