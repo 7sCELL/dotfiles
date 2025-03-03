@@ -2,7 +2,7 @@
 curl -fsSL https://christitus.com/linux | sh
 
 #applications need to install 
-sudo pacman -S git curl kitty playerctl neovim polybar steam bluez bluez-utils blueman pulseaudio pulseaudio-bluetooth pavucontrol picom brightnessctl rofi gvfs-smb feh thunar grub-customizer bpytop ranger os-prober xorg-xrandr
+sudo pacman -S git terminator trash-cli curl kitty playerctl neovim polybar steam bluez bluez-utils blueman pulseaudio pulseaudio-bluetooth pavucontrol picom brightnessctl rofi gvfs-smb feh thunar grub-customizer bpytop ranger os-prober xorg-xrandr
 sudo yay -S kew
 
 sudo systemctl start bluetooth.service
@@ -11,6 +11,7 @@ sudo systemctl enable bluetooth.service
 
 #fonts
 /usr/share/fonts
+.local/share/fonts
 
 #theme
 sudo nvim /etc/environment
