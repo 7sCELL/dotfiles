@@ -12,8 +12,9 @@ cd ~/.config
 trash terminator i3 ploybar hypr
 
 #mkdir pic and cd to Pic folder and installs a wallpaper pack
-mkdir ~/Pic
+cd
 git clone https://github.com/ChrisTitusTech/nord-background
+mv nord-background Pic
 
 cd ~/dotfiles
 
