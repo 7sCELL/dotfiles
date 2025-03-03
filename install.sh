@@ -27,7 +27,7 @@ echo "GTK_THEME=Adwaita-dark" | sudo tee environment
 # Return to the home directory
 cd
 
-# Open the picom configuration file with nvim (requires user interaction)
+# Open the picom configuration file with nvim (requires user interaction) setr fadding to false
 sudo nvim /etc/xdg/picom.conf
 
 # Clone NvChad starter configuration for Neovim and open Neovim (requires user interaction)
