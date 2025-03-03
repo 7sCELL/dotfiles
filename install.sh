@@ -15,7 +15,7 @@ echo "Removing old config folders"
 cd ~/.config
 trash terminator i3 ploybar hypr
 
-#mkdir pic and cd to Pic folder and installs a wallpaper pack
+#downloads wallpapers and renames the folder to Pic
 echo "Creating Pic directory and installing wallpaper pack"
 cd
 git clone https://github.com/ChrisTitusTech/nord-background
@@ -51,10 +51,6 @@ cd
 echo "Opening the picom configuration file with nvim"
 sudo nvim /etc/xdg/picom.conf
 
-# Clone NvChad starter configuration for Neovim and open Neovim (requires user interaction)
-echo "Cloning NvChad starter configuration for Neovim and opening Neovim"
-git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
-
 # Change directory to /etc/X11/xorg.conf.d/ and create a touchpad configuration file
 echo "Changing directory to /etc/X11/xorg.conf.d/ and creating a touchpad configuration file"
 cd /etc/X11/xorg.conf.d/
@@ -66,6 +62,10 @@ echo 'Section "InputClass"
         Option "Tapping" "on"
         Option "NaturalScrolling" "True"
 EndSection' | sudo tee touchpad-tap.conf
+
+# Clone NvChad starter configuration for Neovim and open Neovim (requires user interaction)
+echo "Cloning NvChad starter configuration for Neovim and opening Neovim"
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 
 # Indicate that the script has finished
 echo "Script has finished."
