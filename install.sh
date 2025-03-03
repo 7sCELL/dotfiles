@@ -1,5 +1,17 @@
+#cd to dotfiles 
+cd dotfiles
+
 # Install essential packages using pacman
 sudo pacman -S git terminator trash-cli curl kitty playerctl neovim polybar steam bluez bluez-utils blueman pulseaudio pulseaudio-bluetooth pavucontrol picom brightnessctl rofi gvfs-smb feh thunar grub-customizer bpytop ranger os-prober xorg-xrandr
+
+#remove the old conf folders 
+cd ~/.config
+trash terminator i3 ploybar hypr
+
+cd ~/dotfiles
+
+#move the conf folders to ~/.config
+mv -f terminator i3 hypr polybar ~/.config
 
 # Install additional packages using yay
 sudo yay -S kew
@@ -33,4 +45,4 @@ echo 'Section "InputClass"
 EndSection' | sudo tee touchpad-tap.conf
 
 # Indicate that the script has finished
-echo "Script has finished successfully."
+echo "Script has finished."
