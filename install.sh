@@ -44,5 +44,8 @@ echo 'Section "InputClass"
         Option "NaturalScrolling" "True"
 EndSection' | sudo tee touchpad-tap.conf
 
+#linutil for chris titus 
+curl -fsSL https://christitus.com/linux | sh
+
 # Indicate that the script has finished
 echo "Script has finished."
