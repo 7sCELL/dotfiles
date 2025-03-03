@@ -4,6 +4,9 @@ cd dotfiles
 # Install essential packages using pacman
 sudo pacman -S git terminator trash-cli curl kitty playerctl neovim polybar steam bluez bluez-utils blueman pulseaudio pulseaudio-bluetooth pavucontrol picom brightnessctl rofi gvfs-smb feh thunar grub-customizer bpytop ranger os-prober xorg-xrandr
 
+# Install additional packages using yay
+sudo yay -S kew
+
 #remove the old conf folders 
 cd ~/.config
 trash terminator i3 ploybar hypr
@@ -17,8 +20,8 @@ cd ~/dotfiles
 #move the conf folders to ~/.config
 mv -f terminator i3 hypr polybar ~/.config
 
-# Install additional packages using yay
-sudo yay -S kew
+cd ~/.config/i3
+sudo chmod +777 launch.sh temp.sh
 
 # Start and enable the Bluetooth service
 sudo systemctl start bluetooth.service
