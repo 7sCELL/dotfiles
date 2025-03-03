@@ -29,7 +29,7 @@ echo "Moving config folders to ~/.config"
 mv -f terminator i3 hypr polybar ~/.config
 
 echo "Changing directory to ~/.config/i3"
-cd ~/.config/i3
+cd ~/.config/polybar
 echo "Setting permissions for launch.sh and temp.sh"
 sudo chmod +777 launch.sh temp.sh
 
