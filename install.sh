@@ -26,7 +26,7 @@ cd ~/dotfiles
 
 #move the conf folders to ~/.config
 echo "Moving config folders to ~/.config"
-mv -f terminator i3 hypr polybar ~/.config
+trash terminator i3 hypr polybar ~/.config
 
 echo "Changing directory to ~/.config/i3"
 cd ~/.config/polybar
